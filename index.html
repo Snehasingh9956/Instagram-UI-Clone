@@ -1,112 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instagram Clone</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.23/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .hover\:scale-110:hover {
+      transform: scale(1.10);
+    }
+  </style>
 </head>
-
-<body class="bg-gray-50">
+<body class="bg-gray-100">
 
   <!-- Navbar -->
-  <nav class="bg-white shadow-md px-4 py-2">
-    <div class="flex justify-between items-center">
-      <div class="text-2xl font-bold text-blue-500">Instagram</div>
-      <div class="space-x-6">
-        <a href="#" class="text-gray-700">Home</a>
-        <a href="#" class="text-gray-700">Search</a>
-        <a href="#" class="text-gray-700">Profile</a>
+  <nav class="bg-white shadow-md px-6 py-4">
+    <div class="flex items-center justify-between max-w-7xl mx-auto">
+      <div class="text-3xl font-bold text-blue-600">Instagram</div>
+      <div class="flex space-x-8">
+        <a href="#" class="text-gray-700 hover:text-blue-500">Home</a>
+        <a href="#" class="text-gray-700 hover:text-blue-500">Explore</a>
+        <a href="#" class="text-gray-700 hover:text-blue-500">Messages</a>
+        <a href="#" class="text-gray-700 hover:text-blue-500">Profile</a>
       </div>
     </div>
   </nav>
 
   <!-- Main content -->
-  <div class="flex flex-col lg:flex-row p-4">
+  <div class="flex flex-col lg:flex-row gap-8 p-6 max-w-7xl mx-auto">
     
-    <!-- Sidebar -->
-    <div class="lg:w-1/4 w-full mb-8 lg:mb-0">
-      <div class="bg-white p-4 shadow-md rounded-lg mb-4">
-        <div class="flex items-center space-x-4">
-          <div class="h-16 w-16 bg-gray-200 rounded-full"></div>
-          <div>
-            <h2 class="font-bold text-xl">John Doe</h2>
-            <p class="text-gray-500">johndoe@example.com</p>
+    <!-- Sidebar (Left) -->
+    <div class="lg:w-1/4 w-full bg-white p-4 shadow-lg rounded-xl">
+      <div class="flex items-center space-x-4 mb-6">
+        <div class="h-16 w-16 bg-gray-300 rounded-full"></div>
+        <div>
+          <h2 class="text-xl font-semibold">John Doe</h2>
+          <p class="text-gray-500 text-sm">johndoe@example.com</p>
+        </div>
+      </div>
+      <div>
+        <p class="text-gray-700 font-semibold mb-4">Suggestions for You</p>
+        <div class="space-y-4">
+          <!-- Suggested User 1 -->
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <div class="h-10 w-10 bg-gray-300 rounded-full"></div>
+              <span class="text-gray-800">User1</span>
+            </div>
+            <button class="text-blue-500 text-sm font-medium">Follow</button>
+          </div>
+          <!-- Suggested User 2 -->
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <div class="h-10 w-10 bg-gray-300 rounded-full"></div>
+              <span class="text-gray-800">User2</span>
+            </div>
+            <button class="text-blue-500 text-sm font-medium">Follow</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Feed -->
-    <div class="lg:w-2/4 w-full">
-      <div class="bg-white p-4 shadow-md rounded-lg mb-4">
-        <!-- Post 1 -->
-        <div class="flex flex-col mb-4">
-          <div class="flex justify-between items-center mb-2">
-            <div class="flex items-center space-x-2">
-              <div class="h-8 w-8 bg-gray-300 rounded-full"></div>
-              <span class="font-semibold">User Name</span>
-            </div>
-            <button class="text-gray-500">...</button>
+    <!-- Feed (Main Content) -->
+    <div class="lg:w-2/4 w-full bg-white p-6 shadow-lg rounded-xl space-y-6">
+      <!-- Post 1 -->
+      <div class="space-y-4">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center space-x-3">
+            <div class="h-10 w-10 bg-gray-300 rounded-full"></div>
+            <span class="font-semibold text-gray-800">User1</span>
           </div>
-          <img src="https://via.placeholder.com/500" alt="Post Image" class="w-full rounded-lg">
-          <div class="flex justify-between items-center mt-4">
-            <div class="flex space-x-4">
-              <button class="text-gray-700">Like</button>
-              <button class="text-gray-700">Comment</button>
-              <button class="text-gray-700">Share</button>
-            </div>
-            <div>
-              <span class="text-gray-500">10 mins ago</span>
-            </div>
+          <button class="text-gray-600 hover:text-black">...</button>
+        </div>
+        <img src="https://via.placeholder.com/600" alt="Post" class="rounded-lg w-full object-cover">
+        <div class="flex justify-between items-center mt-4">
+          <div class="flex space-x-6">
+            <button class="text-gray-600 hover:text-red-500">Like</button>
+            <button class="text-gray-600 hover:text-blue-500">Comment</button>
+            <button class="text-gray-600 hover:text-green-500">Share</button>
+          </div>
+          <div>
+            <span class="text-sm text-gray-500">2 hours ago</span>
           </div>
         </div>
+      </div>
 
-        <!-- Post 2 -->
-        <div class="flex flex-col mb-4">
-          <div class="flex justify-between items-center mb-2">
-            <div class="flex items-center space-x-2">
-              <div class="h-8 w-8 bg-gray-300 rounded-full"></div>
-              <span class="font-semibold">User Name</span>
-            </div>
-            <button class="text-gray-500">...</button>
+      <!-- Post 2 -->
+      <div class="space-y-4">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center space-x-3">
+            <div class="h-10 w-10 bg-gray-300 rounded-full"></div>
+            <span class="font-semibold text-gray-800">User2</span>
           </div>
-          <img src="https://via.placeholder.com/500" alt="Post Image" class="w-full rounded-lg">
-          <div class="flex justify-between items-center mt-4">
-            <div class="flex space-x-4">
-              <button class="text-gray-700">Like</button>
-              <button class="text-gray-700">Comment</button>
-              <button class="text-gray-700">Share</button>
-            </div>
-            <div>
-              <span class="text-gray-500">20 mins ago</span>
-            </div>
+          <button class="text-gray-600 hover:text-black">...</button>
+        </div>
+        <img src="https://via.placeholder.com/600" alt="Post" class="rounded-lg w-full object-cover">
+        <div class="flex justify-between items-center mt-4">
+          <div class="flex space-x-6">
+            <button class="text-gray-600 hover:text-red-500">Like</button>
+            <button class="text-gray-600 hover:text-blue-500">Comment</button>
+            <button class="text-gray-600 hover:text-green-500">Share</button>
+          </div>
+          <div>
+            <span class="text-sm text-gray-500">5 hours ago</span>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Right Sidebar -->
-    <div class="lg:w-1/4 w-full">
-      <div class="bg-white p-4 shadow-md rounded-lg">
-        <div class="font-semibold mb-2">Suggested for you</div>
+    <div class="lg:w-1/4 w-full bg-white p-4 shadow-lg rounded-xl">
+      <div>
+        <p class="text-gray-700 font-semibold mb-4">Trending Posts</p>
         <div class="space-y-4">
           <div class="flex items-center justify-between">
-            <div class="h-8 w-8 bg-gray-300 rounded-full"></div>
-            <div>
-              <span class="font-semibold text-sm">User Name</span>
-              <p class="text-gray-500 text-xs">New follower</p>
+            <div class="flex items-center space-x-3">
+              <div class="h-10 w-10 bg-gray-300 rounded-full"></div>
+              <span class="text-gray-800">User3</span>
             </div>
-            <button class="text-blue-500 text-xs">Follow</button>
+            <button class="text-blue-500 text-sm font-medium">Follow</button>
           </div>
           <div class="flex items-center justify-between">
-            <div class="h-8 w-8 bg-gray-300 rounded-full"></div>
-            <div>
-              <span class="font-semibold text-sm">User Name</span>
-              <p class="text-gray-500 text-xs">New follower</p>
+            <div class="flex items-center space-x-3">
+              <div class="h-10 w-10 bg-gray-300 rounded-full"></div>
+              <span class="text-gray-800">User4</span>
             </div>
-            <button class="text-blue-500 text-xs">Follow</button>
+            <button class="text-blue-500 text-sm font-medium">Follow</button>
           </div>
         </div>
       </div>
@@ -114,11 +133,27 @@
   </div>
 
   <!-- Footer -->
-  <footer class="bg-gray-100 py-4 text-center">
-    <p class="text-gray-500">© 2024 Instagram Clone</p>
+  <footer class="bg-gray-200 py-6 text-center">
+    <p class="text-gray-500 text-sm">© 2024 Instagram Clone - All Rights Reserved</p>
   </footer>
 
-  <script src="script.js"></script>
-</body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const likeButtons = document.querySelectorAll('button.text-gray-600');
+      
+      likeButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          if (button.textContent === 'Like') {
+            button.textContent = 'Liked';
+            button.classList.add('text-red-500');
+          } else {
+            button.textContent = 'Like';
+            button.classList.remove('text-red-500');
+          }
+        });
+      });
+    });
+  </script>
 
+</body>
 </html>
